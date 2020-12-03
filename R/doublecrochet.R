@@ -6,9 +6,6 @@ file_read_lines <- function(path){
 }
 
 
-
-
-
 lines_data_frame_chunked <- function(lines, pause_point = "^---$"){
 
   lines %>%
