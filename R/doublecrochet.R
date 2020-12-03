@@ -52,7 +52,7 @@ chunk_list_quote <- function(chunk_list){
 quoted_style <- function(quoted){
 
   quoted %>%
-  paste("\n---\nclass: inverse\n\n",
+  paste("\n---\nclass: inverse\n\n#Quoting source .Rmd:n\n",
         .)
 
 }
@@ -84,7 +84,7 @@ combined %>%
 
 
 
-rmd_crochet <- function(input, output = str_replace(input, "\\.rmd|\\.Rmd", "_double.Rmd")){
+crochet <- function(input, output = str_replace(input, "\\.rmd|\\.Rmd", "_double.Rmd")){
 
 input %>%
   file_read_lines() %>%
