@@ -1,13 +1,13 @@
 Package: doublecrochet
-Title: What the Package Does (One Line, Title Case)
+Title: Pairs Bits of Rmd Source and Output
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Evangeline",
+           family = "Reynolds",
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Pairs .Rmd source text and output.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
