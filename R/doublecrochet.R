@@ -46,11 +46,13 @@ chunk_list_quote <- function(chunk_list){
 
 }
 
-quoted_style <- function(quoted, message = "###Quoting source .Rmd:\n"){
+
+
+
+quoted_style <- function(quoted){
 
   quoted %>%
-  paste0("\n---\nclass: inverse\n\n",
-         message,
+  paste("\n---\nclass: inverse\n\n#Quoting source .Rmd:n\n",
         .)
 
 }
