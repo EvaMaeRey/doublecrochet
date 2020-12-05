@@ -20,7 +20,7 @@ lines_data_frame_chunked <- function(lines, pause_point = "^---$"){
 data_frame_chunked_remove_pause_points <- function(data_frame_chunked){
 
   data_frame_chunked %>%
-    filter(!slide_break)
+    dplyr::filter(!slide_break)
 
 }
 
@@ -29,9 +29,9 @@ data_frame_chunked_remove_pause_points <- function(data_frame_chunked){
 data_frame_chunked_collapse_to_chunk_list <- function(data_frame_chunked){
 
   data_frame_chunked %>%
-  group_by(slide) %>%
-  summarize(slide_content = paste0(line, collapse = "\n")) %>%
-  pull()
+  dplyr::group_by(slide) %>%
+  dplyr::summarize(slide_content = paste0(line, collapse = "\n")) %>%
+  dplyr::pull()
 
 }
 
@@ -52,7 +52,7 @@ chunk_list_quote <- function(chunk_list){
 quoted_style <- function(quoted){
 
   quoted %>%
-  paste("\n---\nclass: inverse\n\n#Quoting source .Rmd:n\n",
+  paste("\n---\nclass: inverse\n\n###From source .Rmd:\n\n",
         .)
 
 }
@@ -76,7 +76,7 @@ combined_collapse_and_save <- function(combined, file = "temp.Rmd"){
 
 combined %>%
   paste0(collapse = "\n\n") %>%
-  str_replace_all("~~", " ") %>%
+  stringr::str_replace_all("~~", " ") %>%
   paste0("---\n", .) %>%
   writeLines(con = file)
 
@@ -84,7 +84,16 @@ combined %>%
 
 
 
-crochet <- function(input, output = str_replace(input, "\\.rmd|\\.Rmd", "_double.Rmd")){
+#' Title crochet
+#'
+#' @param input path to .Rmd file
+#' @param output path to .Rmd output
+#'
+#' @return saved file
+#' @export
+#'
+#' @examples
+crochet <- function(input, output = stringr::str_replace(input, "\\.rmd|\\.Rmd", "_double.Rmd")){
 
 input %>%
   file_read_lines() %>%
