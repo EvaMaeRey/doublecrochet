@@ -5,7 +5,7 @@
 \title{Title crochet}
 \usage{
 crochet(input, output = stringr::str_replace(input, "\\\\.rmd|\\\\.Rmd",
-  "_double.Rmd"))
+  "_double_crochet.Rmd"))
 }
 \arguments{
 \item{input}{path to .Rmd file}

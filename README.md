@@ -10,15 +10,14 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 Rmarkdown files are super cool because they allow you to co-mingle
-prose, code, and output in a single output file. Having code and code
-output proximate in a rendered document is helpful at interpreting
+prose, code, and code output in a single output file. Having code and
+code output proximate in a rendered document is helpful at interpreting
 intent of the code. And getting up and running with .Rmds is pretty easy
-— learn about code chunks, learn a bit of markdown and you are good to
-go.
+— learn bit about code chunks, a bit of markdown and you are good to go.
 
-But there is a lot that you can do in .Rmds beyond the basics. One can
-quickly experience .Rmd envy when seeing the products of more advanced
-users.
+But there is a lot that you can do in .Rmds beyond the basics. May feel
+.Rmd admiration and *wonder* when seeing the products of more advanced
+users. How did they to *that*?
 
 And as you become a more advanced user you might asked more and more:
 How did you produce those slides, poster, dashboard etc.? How can you
@@ -71,12 +70,23 @@ slide show files:
 ``` r
 library(doublecrochet)
 
+download.file("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", "xaringan_skeleton.Rmd")
+
 ## a text .rmd file stored on github
-my_rmd <- "https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/minimal-flipbook/skeleton/skeleton.Rmd"
+download.file("https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/most-features/skeleton/skeleton.Rmd", "flipbook_skeleton.Rmd")
 
 ## translating to the _double version
-crochet(my_rmd, output = "my_rmd_double.Rmd")
+crochet("flipbook_skeleton.Rmd")
+crochet("xaringan_skeleton.Rmd")
+
+rmarkdown::render("flipbook_skeleton_double_crochet.Rmd")
+
+# in fact for the math type the conversion is not working, you have to go back in and escape
+# rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")
 ```
 
-Once you have the ‘doublecrochet’ version of your .Rmd, you can compile
-and render this and you’ll have html output w source quoted throughout.
+Once you have the ‘doublecrochet’ version of your .Rmd, you can try to
+compile and render this and you’ll have html output. Source will be
+quoted throughout.
+
+![](https://images.unsplash.com/photo-1577635515158-dcce4789c8fb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80)

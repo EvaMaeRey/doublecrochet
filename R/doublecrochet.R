@@ -47,8 +47,6 @@ chunk_list_quote <- function(chunk_list){
 }
 
 
-
-
 quoted_style <- function(quoted){
 
   quoted %>%
@@ -93,7 +91,9 @@ combined %>%
 #' @export
 #'
 #' @examples
-crochet <- function(input, output = stringr::str_replace(input, "\\.rmd|\\.Rmd", "_double.Rmd")){
+crochet <- function(input, output = stringr::str_replace(input,
+                                                         "\\.rmd|\\.Rmd",
+                                                         "_double_crochet.Rmd")){
 
 input %>%
   file_read_lines() %>%
@@ -111,6 +111,7 @@ original_quoted_combine(chunk_list, quoted) %>%
   combined_collapse_and_save(file = output)
 
 }
+
 
 
 # lines %>%
