@@ -66,7 +66,6 @@ original_quoted_combine <- function(original, quoted){
   #mostly quoted comes first
   paste0(quoted_mod, "\n---\n", original_mod)
 
-
 }
 
 
@@ -91,10 +90,10 @@ combined %>%
 #' @export
 #'
 #' @examples
+#' crochet("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", )
 crochet <- function(input, output = stringr::str_replace(input,
                                                          "\\.rmd|\\.Rmd",
                                                          "_double_crochet.Rmd")){
-
 input %>%
   file_read_lines() %>%
   lines_data_frame_chunked() %>%
@@ -112,6 +111,8 @@ original_quoted_combine(chunk_list, quoted) %>%
 
 }
 
+
+crochet(input = "https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", output = "xar.rmd")
 
 
 # lines %>%

@@ -29,8 +29,8 @@ your .Rmd – one that has source snippets quoted proximate (usually
 prior) to the rendered output.**
 
 The package is experimental, and now focused a case where there are
-natural breakpoints – slideshows\! Quoted source is be presented on a
-slide, then the rendered content is shown. Yay\!
+natural breakpoints – slideshows! Quoted source is be presented on a
+slide, then the rendered content is shown. Yay!
 
 Inspiration for this project was creating [Easy Flipbooks
 Recipes](https://evamaerey.github.io/flipbooks/flipbook_recipes#1) where
@@ -48,11 +48,8 @@ natural pause points.
 ## Installation
 
 <!-- You can install the released version of doublecrochet from [CRAN](https://CRAN.R-project.org) with: -->
-
 <!-- ``` r -->
-
 <!-- install.packages("doublecrochet") -->
-
 <!-- ``` -->
 
 And the development version from [GitHub](https://github.com/) with:
@@ -75,11 +72,22 @@ download.file("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmar
 ## a text .rmd file stored on github
 download.file("https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/most-features/skeleton/skeleton.Rmd", "flipbook_skeleton.Rmd")
 
+
+## a text .rmd file stored on github
+download.file(
+  url = "https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd", 
+  destfile = "doublecrochet_skeleton.Rmd")
+
+
 ## translating to the _double version
 crochet("flipbook_skeleton.Rmd")
 crochet("xaringan_skeleton.Rmd")
+crochet("doublecrochet_skeleton.Rmd")
+
 
 rmarkdown::render("flipbook_skeleton_double_crochet.Rmd")
+
+rmarkdown::render("doublecrochet_skeleton_double_crochet.Rmd")
 
 # in fact for the math type the conversion is not working, you have to go back in and escape
 # rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")
