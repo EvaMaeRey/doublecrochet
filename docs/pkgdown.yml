@@ -1,0 +1,9 @@
+pandoc: 2.11.2
+pkgdown: 1.4.1
+pkgdown_sha: ~
+articles:
+  cool_xaringan_stuff: cool_xaringan_stuff.html
+  cool_xaringan_stuff_double_crochet: cool_xaringan_stuff_double_crochet.html
+  double_crochet: double_crochet.html
+  mathproblems: mathproblems.html
+
