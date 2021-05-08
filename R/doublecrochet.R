@@ -11,16 +11,16 @@ lines_data_frame_chunked <- function(lines, pause_point = "^---$"){
   lines %>%
     stringr::str_replace_all(" ", "~~") %>%
     data.frame(line = .) %>%
-    dplyr::mutate(original = stringr::str_replace_all(line, "~~", " ")) %>%
-    dplyr::mutate(slide_break = stringr::str_detect(line, pause_point)) %>%
-    dplyr::mutate(slide = cumsum(slide_break))
+    dplyr::mutate(original = stringr::str_replace_all(.data$line, "~~", " ")) %>%
+    dplyr::mutate(slide_break = stringr::str_detect(.data$line, pause_point)) %>%
+    dplyr::mutate(slide = cumsum(.data$slide_break))
 
 }
 
 data_frame_chunked_remove_pause_points <- function(data_frame_chunked){
 
   data_frame_chunked %>%
-    dplyr::filter(!slide_break)
+    dplyr::filter(!.data$slide_break)
 
 }
 
@@ -29,8 +29,8 @@ data_frame_chunked_remove_pause_points <- function(data_frame_chunked){
 data_frame_chunked_collapse_to_chunk_list <- function(data_frame_chunked){
 
   data_frame_chunked %>%
-  dplyr::group_by(slide) %>%
-  dplyr::summarize(slide_content = paste0(line, collapse = "\n")) %>%
+  dplyr::group_by(.data$slide) %>%
+  dplyr::summarize(slide_content = paste0(.data$line, collapse = "\n")) %>%
   dplyr::pull()
 
 }
@@ -90,7 +90,6 @@ combined %>%
 #' @export
 #'
 #' @examples
-#' crochet("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", )
 crochet <- function(input, output = stringr::str_replace(input,
                                                          "\\.rmd|\\.Rmd",
                                                          "_double_crochet.Rmd")){

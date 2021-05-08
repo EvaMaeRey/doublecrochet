@@ -1,0 +1,53 @@
+---
+title: "Double Crochet Fails with backslashes"
+author: "This happens a lot with math type"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, "custom.css"]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Hi!
+
+```{css style, eval = TRUE, echo = FALSE}
+.remark-code{line-height: 1.5; font-size: 120%}
+```
+
+```{css style2, eval = TRUE, echo = FALSE}
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+```
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F, 
+                      warning = F, comment = "",
+                      fig.height = 4, cache = T)
+
+```
+
+# Adding!
+
+--
+
+# $$ 1 + 1 $$
+
+
+--
+
+# $$  \alpha + \beta $$

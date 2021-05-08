@@ -1,0 +1,71 @@
+---
+title: "Template Title"
+author: "Your Name"
+date: "The Date"
+output: output_format
+---
+
+
+```{r setup}
+library(doublecrochet)
+```
+
+
+The first example shows some cool stuff from {flair}, {flipbookr}, and {xaringanExtra}
+
+```{r}
+## a text .rmd file stored on github
+download.file(
+  url = "https://raw.githubusercontent.com/EvaMaeRey/doublecrochet/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd", 
+  destfile = "doublecrochet_example.Rmd")
+
+# look at the original output
+rmarkdown::render("doublecrochet_skeleton_double_crochet.Rmd")
+
+# create double crocheted version source
+crochet("doublecrochet_example.Rmd")
+
+# render double crocheted verion
+rmarkdown::render("doublecrochet_example_double_crochet.Rmd")
+```
+
+
+```{r}
+## a text .rmd file stored on github
+download.file("https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/minimal-flipbook/skeleton/skeleton.Rmd", "minimal_flipbook.Rmd")
+
+# render original version
+rmarkdown::render("minimal_flipbook.Rmd")
+
+## translating to the _double version
+crochet("minimal_flipbook.Rmd", )
+
+## rendering double version
+rmarkdown::render("minimal_flipbook_double_crochet.Rmd")
+```
+
+
+```{r, eval = F}
+download.file(
+  url = "https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/mathtype/skeleton/skeleton.Rmd", 
+  destfile = "mathtype_example.Rmd")
+
+# fails!  you've got to go into the .Rmd and fix up backslashes
+rmarkdown::render("mathtype_skeleton_double_crochet.Rmd")
+
+crochet("mathtype_example.Rmd")
+
+```
+
+
+
+```{r, eval = F}
+library(doublecrochet)
+
+download.file("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", "xaringan_skeleton.Rmd")
+
+crochet("xaringan_skeleton.Rmd")
+
+# in fact for the math type the conversion is not working, you have to go back in and escape
+rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")
+```

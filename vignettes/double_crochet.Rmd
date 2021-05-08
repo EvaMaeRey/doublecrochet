@@ -1,0 +1,52 @@
+---
+title: "double_crochet"
+output: rmarkdown::pdf_document
+vignette: >
+  %\VignetteIndexEntry{double_crochet}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(doublecrochet)
+```
+
+Let's just render the template...
+
+```{r, eval = F}
+# should be done in console - adjust file path as needed...
+rmarkdown::render("vignettes/cool_xaringan_stuff.Rmd")
+```
+
+
+```{r}
+doublecrochet::crochet("cool_xaringan_stuff.Rmd")
+```
+
+And then render the double crocheted output...
+
+```{r, eval = F}
+# should be done in console - adjust file path as needed...
+rmarkdown::render("vignettes/cool_xaringan_stuff_double_crochet.Rmd")
+```
+
+```{r}
+file.copy(to = "../inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd",
+          from = "cool_xaringan_stuff.Rmd", 
+          overwrite = T)
+
+file.copy(to = "../inst/rmarkdown/templates/examples/skeleton/skeleton.Rmd",
+          from = "examples.Rmd", 
+          overwrite = T)
+
+file.copy(to = "../inst/rmarkdown/templates/mathtype/skeleton/skeleton.Rmd",
+          from = "mathproblems.Rmd", 
+          overwrite = T)
+```
