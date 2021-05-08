@@ -1,0 +1,43 @@
+template:
+  params:
+    bootswatch: cosmo
+
+development:
+  mode: auto
+
+home:
+  strip_header: false
+
+
+navbar:
+  title: "doublecrochet"
+  type: inverse
+  structure:
+    left:
+    - tabular
+    - plot
+    - cheatsheet
+    right:
+    - reference
+    - news
+    - github
+  components:
+    reference:
+      text: Reference
+      href: reference/index.html
+    news:
+      text: News
+      href: news/index.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/evamaerey/doublecrochet/
+    tabular:
+      text: Tabular overview
+      menu:
+        - text: The basics
+        - text: overview_tab
+          href: https://evamaerey.github.io/doublecrochet/vignettes/cool_xaringan_stuff_double_crochet
+
+authors:
+  "Gina Reynolds":
+    href: github.com/evamaerey

@@ -111,8 +111,6 @@ original_quoted_combine(chunk_list, quoted) %>%
 }
 
 
-crochet(input = "https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", output = "xar.rmd")
-
 
 # lines %>%
 #   str_replace_all(" ", "~~") %>%
