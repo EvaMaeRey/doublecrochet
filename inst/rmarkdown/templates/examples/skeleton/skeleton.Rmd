@@ -26,7 +26,7 @@ rmarkdown::render("doublecrochet_skeleton_double_crochet.Rmd")
 crochet("doublecrochet_example.Rmd")
 
 # render double crocheted verion
-rmarkdown::render("doublecrochet_example_double_crochet.Rmd")
+rmarkdown::render("doublecrochet_example_double_crochet.Rmd") 
 ```
 
 
