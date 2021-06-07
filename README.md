@@ -11,11 +11,11 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-Rmarkdown files are super cool because they allow you to co-mingle
-prose, code, and code output in a single output file. Having code and
-code output proximate in a rendered document is helpful at interpreting
-intent of the code. And getting up and running with .Rmds is pretty easy
-— learn bit about code chunks, a bit of markdown and you are good to go.
+Rmarkdown files are cool. They allow you to co-mingle prose, code, and
+code output in a single output file. Having code and code output
+together in a rendered document is helpful at interpreting intent of the
+code. And getting up and running with .Rmds is pretty easy — learn bit
+about code chunks, a bit of markdown and you are good to go.
 
 But there is a lot that you can do in .Rmds beyond the basics. May feel
 .Rmd admiration and *wonder* when seeing the products of more advanced
@@ -49,24 +49,24 @@ xaringan-complementary packages.
 Check out doublecrochet’s package template which features some cool
 things you can do w/ Xaringan extension packages…
 
-[Cool Xaringan
-Stuff](https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff.html)
+## *Compare* …
+
+### Cool Xaringan Stuff <a href="https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff.html" target="_blank">Open in New tab</a>
 
 <div style="position:relative;padding-top:56.25%;">
 
-<iframe src="https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
+<iframe src="https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
 </iframe>
 
 </div>
 
-And
+## … with the Double Crocheted version
 
-[Cool Xaringan Stuff Double
-Crocheted](https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff_double_crochet.html)
+### Cool Xaringan Stuff *Double Crocheted* <a href="https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff_double_crochet.html" target="_blank">View in new tab</a>:
 
 <div style="position:relative;padding-top:56.25%;">
 
-<iframe src="https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff_double_crochet.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
+<iframe src="https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff_double_crochet.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
 </iframe>
 
 </div>
