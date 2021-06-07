@@ -50,11 +50,11 @@ Check out doublecrochet’s package template which features some cool
 things you can do w/ Xaringan extension packages…
 
 [Cool Xaringan
-Stuff](https://evamaerey.github.io/doublecrochet/vignettes/cool_xaringan_stuff.html)
+Stuff](https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff.html)
 
 <div style="position:relative;padding-top:56.25%;">
 
-<iframe src="https://evamaerey.github.io/doublecrochet/vignettes/cool_xaringan_stuff.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
+<iframe src="https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
 </iframe>
 
 </div>
@@ -62,11 +62,11 @@ Stuff](https://evamaerey.github.io/doublecrochet/vignettes/cool_xaringan_stuff.h
 And
 
 [Cool Xaringan Stuff Double
-Crocheted](https://evamaerey.github.io/doublecrochet/vignettes/cool_xaringan_stuff_double_crochet.html)
+Crocheted](https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff_double_crochet.html)
 
 <div style="position:relative;padding-top:56.25%;">
 
-<iframe src="https://evamaerey.github.io/doublecrochet/vignettes/cool_xaringan_stuff_double_crochet.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
+<iframe src="https://evamaerey.github.io/doublecrochet/docs/cool_xaringan_stuff_double_crochet.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
 </iframe>
 
 </div>
