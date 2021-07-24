@@ -91,7 +91,7 @@
 
 <p>Rmarkdown files are so cool. They let you to combine prose, code, and code output in a <em>single</em> output file. And getting up and running with .Rmds is pretty easy — learn bit about code chunks, a bit of markdown and you are good to go.</p>
 <p>But there is a lot that you can do in .Rmds beyond the basics. So you may feel .Rmd admiration and wonder at the products of more advanced users. How did they to <em>that</em>?</p>
-<p>Or maybe as an advanced user you might get asked: <em>How did you produce those slides, poster, dashboard etc.?</em> You can answer ‘xaringan’ or ‘knitr’, but can you deliver ‘the how-to goods’ in a detailed way when you get this question?</p>
+<p>Or maybe as an advanced user you might get asked: <em>How did you produce those slides, poster, dashboard etc.?</em> You can answer ‘xaringan’ or ‘knitr’, but can you deliver ‘the how-to goods’ in a detailed way when you get this question? (Another common sensation, looking back at your own work, may be ‘how did I get that done?’)</p>
 <p>The goal of doublecrochet is to help produce a complementary output from your .Rmd – one that has .Rmd source snippets quoted close to the rendered output.</p>
 <p>The package is experimental, and now focused a case where there are natural breakpoints – slideshows! Quoted source is presented on a slide, then the rendered content is shown.</p>
 <p>Check out doublecrochet’s in action below. The first set of slides is a slide show of ‘Cool Xaringan Stuff’, and the second is the Double Crochetted version that quotes the slide source.</p>
@@ -147,13 +147,13 @@
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## a text .rmd file stored on github</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://raw.githubusercontent.com/EvaMaeRey/doublecrochet/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd"</span>, </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">"docs/fun_example.Rmd"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">"docs/cool_xaringan_stuff.Rmd"</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># regular render of xaringan .Rmd </span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="at">input =</span> <span class="st">"docs/fun_example.Rmd"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="at">input =</span> <span class="st">"docs/cool_xaringan_stuff.Rmd"</span>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># double crochet render</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>doublecrochet<span class="sc">::</span><span class="fu">crochet</span>(<span class="st">"docs/doublecrochet_example.Rmd"</span>, <span class="at">render =</span> T)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>doublecrochet<span class="sc">::</span><span class="fu">crochet</span>(<span class="at">input =</span> <span class="st">"docs/cool_xaringan_stuff.Rmd"</span>, <span class="at">render =</span> T)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                      </span></code></pre></div>
 <p>Once you have the ‘doublecrochet’ version of your .Rmd, you can try to compile and render this and you’ll have html output. Source will be quoted throughout.</p>
 </div>
