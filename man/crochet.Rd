@@ -4,8 +4,12 @@
 \alias{crochet}
 \title{Title crochet}
 \usage{
-crochet(input, output = stringr::str_replace(input, "\\\\.rmd|\\\\.Rmd",
-  "_double_crochet.Rmd"))
+crochet(
+  input,
+  dcrocheted_rmd = stringr::str_replace(input, "\\\\.rmd|\\\\.Rmd",
+    "_double_crochet.Rmd"),
+  render = T
+)
 }
 \arguments{
 \item{input}{path to .Rmd file}

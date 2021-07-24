@@ -1,9 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# doublecrochet
+# Introducing *{doublecrochet}*
 
-![](https://images.unsplash.com/photo-1577635515158-dcce4789c8fb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80)
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 <!-- badges: start -->
 
@@ -11,43 +11,31 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-Rmarkdown files are cool. They allow you to co-mingle prose, code, and
-code output in a single output file. Having code and code output
-together in a rendered document is helpful at interpreting intent of the
-code. And getting up and running with .Rmds is pretty easy — learn bit
-about code chunks, a bit of markdown and you are good to go.
+Rmarkdown files are so cool. They let you to combine prose, code, and
+code output in a *single* output file. And getting up and running with
+.Rmds is pretty easy — learn bit about code chunks, a bit of markdown
+and you are good to go.
 
-But there is a lot that you can do in .Rmds beyond the basics. May feel
-.Rmd admiration and *wonder* when seeing the products of more advanced
+But there is a lot that you can do in .Rmds beyond the basics. So you
+may feel .Rmd admiration and wonder at the products of more advanced
 users. How did they to *that*?
 
-And as you become a more advanced user you might asked more and more:
-How did you produce those slides, poster, dashboard etc.? How can you
-easily deliver ‘the how-to goods’ in a detailed way when you get this
-question?
+Or maybe as an advanced user you might get asked: *How did you produce
+those slides, poster, dashboard etc.?* You can answer ‘xaringan’ or
+‘knitr’, but can you deliver ‘the how-to goods’ in a detailed way when
+you get this question?
 
-**The goal of doublecrochet is to help you produce a second output from
-your .Rmd – one that has source snippets quoted proximate (usually
-prior) to the rendered output.**
+The goal of doublecrochet is to help produce a complementary output from
+your .Rmd – one that has .Rmd source snippets quoted close to the
+rendered output.
 
 The package is experimental, and now focused a case where there are
 natural breakpoints – slideshows! Quoted source is presented on a slide,
-then the rendered content is shown. Yay!
+then the rendered content is shown.
 
-Inspiration for this project was creating [Easy Flipbooks
-Recipes](https://evamaerey.github.io/flipbooks/flipbook_recipes#1) where
-I was quoting my source a bunch w/ copy paste and fancy fencing. But it
-was painstaking and error prone, and I only got through 4 recipes.
-
-But there are more ‘recipes’ that I’d like to share. One test/use case
-will be ‘Most Flipbookr Features’ template, a template that is part of
-the flipbookr package that demonstrates (and I use for testing) most
-flipbookr modes. Having ‘doublecrochet’ working should be nice for
-communicating about how to use flipbookr – and other cool
-xaringan-complementary packages.
-
-Check out doublecrochet’s package template which features some cool
-things you can do w/ Xaringan extension packages…
+Check out doublecrochet’s in action below. The first set of slides is a
+slide show of ‘Cool Xaringan Stuff’, and the second is the Double
+Crochetted version that quotes the slide source.
 
 ## *Compare* …
 
@@ -60,7 +48,7 @@ things you can do w/ Xaringan extension packages…
 
 </div>
 
-## … with the Double Crocheted version
+## *… with the Double Crocheted version*
 
 ### Cool Xaringan Stuff *Double Crocheted* <a href="https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff_double_crochet.html" target="_blank">View in new tab</a>:
 
@@ -71,8 +59,16 @@ things you can do w/ Xaringan extension packages…
 
 </div>
 
-Meanwhile, we’ll think about how it can be used for other .Rmd products
-where we don’t have slide breaks as natural pause points.
+## Motivation
+
+Inspiration for this project was creating [Easy Flipbooks
+Recipes](https://evamaerey.github.io/flipbooks/flipbook_recipes#1) where
+I was quoting my source a bunch w/ copy paste and fancy fencing. I only
+got through 4 ‘recipes’. But there were more ‘recipes’ that I’d like to
+share.
+
+Having ‘doublecrochet’ working should be nice for communicating about
+how to use flipbookr – and other cool xaringan-complementary packages.
 
 ## Installation
 
@@ -96,17 +92,36 @@ slide show files:
 ``` r
 library(doublecrochet)
 
-download.file("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", "xaringan_skeleton.Rmd")
-
-
 ## a text .rmd file stored on github
 download.file(
-  url = "https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd", 
-  destfile = "doublecrochet_example.Rmd")
+  url = "https://raw.githubusercontent.com/EvaMaeRey/doublecrochet/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd", 
+  destfile = "docs/fun_example.Rmd")
 
+# regular render of xaringan .Rmd 
+rmarkdown::render(input = "docs/fun_example.Rmd")
 
-crochet("doublecrochet_example.Rmd")
-rmarkdown::render("doublecrochet_skeleton_double_crochet.Rmd")
+# double crochet render
+doublecrochet::crochet("docs/doublecrochet_example.Rmd", render = T)
+                      
+```
+
+Once you have the ‘doublecrochet’ version of your .Rmd, you can try to
+compile and render this and you’ll have html output. Source will be
+quoted throughout.
+
+## Bugs
+
+Backslashing is still being worked out. Especially sad is that math mode
+doesn’t work well because of this. :-( I see this “–from
+markdown+autolink\_bare\_uris+tex\_math\_single\_backslash” in pandoc
+conversion upon render. Maybe the answer is in there…
+
+We see this with the xaringan template below.
+
+``` r
+library(doublecrochet)
+
+download.file("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", "xaringan_skeleton.Rmd")
 
 crochet("xaringan_skeleton.Rmd")
 
@@ -116,6 +131,7 @@ crochet("xaringan_skeleton.Rmd")
 # rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")
 ```
 
-Once you have the ‘doublecrochet’ version of your .Rmd, you can try to
-compile and render this and you’ll have html output. Source will be
-quoted throughout.
+## Scope
+
+Doublecrochet doesn’t do a good job of showing bigger picture and global
+style changes in a file.

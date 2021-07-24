@@ -1,4 +1,11 @@
 
+#' Read .rmd as text
+#'
+#' @param path
+#'
+#' @return
+#'
+#' @examples
 file_read_lines <- function(path){
 
   readLines(path, skipNul = F)
@@ -6,7 +13,16 @@ file_read_lines <- function(path){
 }
 
 
-lines_data_frame_chunked <- function(lines, pause_point = "^---$"){
+#' rmd text converted to data frame and slide breaks identified
+#' and which lines associated with each slide
+#'
+#' @param lines
+#' @param pause_point
+#'
+#' @return
+#'
+#' @examples
+lines_data_frame_portioned <- function(lines, pause_point = "^---$"){
 
   lines %>%
     stringr::str_replace_all(" ", "~~") %>%
@@ -17,27 +33,48 @@ lines_data_frame_chunked <- function(lines, pause_point = "^---$"){
 
 }
 
-data_frame_chunked_remove_pause_points <- function(data_frame_chunked){
+#' remove slide breaks from content
+#'
+#' @param data_frame_portioned
+#'
+#' @return
+#'
+#' @examples
+data_frame_portioned_remove_pause_points <- function(data_frame_portioned){
 
-  data_frame_chunked %>%
+  data_frame_portioned %>%
     dplyr::filter(!.data$slide_break)
 
 }
 
 
 
-data_frame_chunked_collapse_to_chunk_list <- function(data_frame_chunked){
+#' convert to list containing strings that have content between slide breaks
+#'
+#' @param data_frame_portioned
+#'
+#' @return
+#'
+#' @examples
+data_frame_portioned_collapse_to_portion_list <- function(data_frame_portioned){
 
-  data_frame_chunked %>%
+  data_frame_portioned %>%
   dplyr::group_by(.data$slide) %>%
   dplyr::summarize(slide_content = paste0(.data$line, collapse = "\n")) %>%
   dplyr::pull()
 
 }
 
-chunk_list_quote <- function(chunk_list){
+#' Quote the material betweeen the pause points ---
+#'
+#' @param portion_list
+#'
+#' @return
+#'
+#' @examples
+portion_list_quote <- function(portion_list){
 
-  chunk_list %>%
+  portion_list %>%
     stringr::str_replace_all("\'", "\\\\'") %>%
     stringr::str_replace_all("\n", "\\\\n") %>%
   paste0("```{r, comment = '', echo = F, return = 'asis'}\ncat('---\n",
@@ -47,14 +84,30 @@ chunk_list_quote <- function(chunk_list){
 }
 
 
+#' Adding style and message to quoted text
+#'
+#' @param quoted
+#'
+#' @return
+#'
+#' @examples
 quoted_style <- function(quoted){
 
   quoted %>%
-  paste("\n---\nclass: inverse\n\n###From source .Rmd:\n\n",
+  paste("\n---\nclass: inverse\n\n####From source .Rmd:\n\n",
         .)
 
 }
 
+#' Alternate original and quoted
+#' quoted first, except for initial
+#'
+#' @param original
+#' @param quoted
+#'
+#' @return
+#'
+#' @examples
 original_quoted_combine <- function(original, quoted){
 
   original_mod <- original
@@ -69,6 +122,14 @@ original_quoted_combine <- function(original, quoted){
 }
 
 
+#' Collapse text and save as .Rmd
+#'
+#' @param combined
+#' @param file
+#'
+#' @return
+#'
+#' @examples
 combined_collapse_and_save <- function(combined, file = "temp.Rmd"){
 
 combined %>%
@@ -90,23 +151,32 @@ combined %>%
 #' @export
 #'
 #' @examples
-crochet <- function(input, output = stringr::str_replace(input,
-                                                         "\\.rmd|\\.Rmd",
-                                                         "_double_crochet.Rmd")){
+crochet <- function(input,
+                    dcrocheted_rmd = stringr::str_replace(input,
+                                                  "\\.rmd|\\.Rmd",
+                                                  "_double_crochet.Rmd"),
+                    render = T){
 input %>%
   file_read_lines() %>%
-  lines_data_frame_chunked() %>%
-  data_frame_chunked_remove_pause_points() %>%
-  data_frame_chunked_collapse_to_chunk_list() ->
-chunk_list
+  lines_data_frame_portioned() %>%
+  data_frame_portioned_remove_pause_points() %>%
+  data_frame_portioned_collapse_to_portion_list() ->
+portion_list
 
-chunk_list %>%
-  chunk_list_quote() %>%
+portion_list %>%
+  portion_list_quote() %>%
   quoted_style() ->
 quoted
 
-original_quoted_combine(chunk_list, quoted) %>%
-  combined_collapse_and_save(file = output)
+original_quoted_combine(portion_list, quoted) %>%
+  combined_collapse_and_save(file = dcrocheted_rmd)
+
+if(render){
+
+  rmarkdown::render(input = dcrocheted_rmd)
+
+}
+
 
 }
 
@@ -139,21 +209,21 @@ original_quoted_combine(chunk_list, quoted) %>%
 
 
 
-# mutate(start_chunk = str_detect(line, "```\\{r")) %>%
-# mutate(mod = ifelse(start_chunk,
+# mutate(start_portion = str_detect(line, "```\\{r")) %>%
+# mutate(mod = ifelse(start_portion,
 #                     paste0("````markdown\n", line,
 #                            "`r ''`"), "")) %>%
-# mutate(end_chunk = str_detect(line, "```$")) %>%
-# # filter(start_chunk) %>%
+# mutate(end_portion = str_detect(line, "```$")) %>%
+# # filter(start_portion) %>%
 # mutate(in_line = str_detect(line, "^`r")) %>%
-# mutate(mod = ifelse(end_chunk,
+# mutate(mod = ifelse(end_portion,
 #                     paste0(line, "\n````"),
 #                     "")) %>%
 
 # ```markdown
 # ---
 #
-#   ``r 'r chunk_reveal("wrangle")'``
+#   ``r 'r portion_reveal("wrangle")'``
 # ```
 #
 #

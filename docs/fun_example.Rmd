@@ -1,0 +1,285 @@
+---
+title: "Introducing Double Crochet"
+author: "Featuring a few of my favorite things"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, "custom.css"]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F, 
+                      warning = F, comment = "",
+                      fig.height = 4, cache = T)
+library(tidyverse)
+library(flipbookr)
+options(knitr.duplicate.label = "allow")
+xaringanExtra::use_share_again()
+```
+
+# Hi!
+
+```{css style, eval = TRUE, echo = FALSE}
+.remark-code{line-height: 1.5; font-size: 120%}
+```
+
+```{css style2, eval = TRUE, echo = FALSE}
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+```
+
+
+
+
+
+
+---
+
+# Hello. 
+--
+How are you? 
+--
+Good?
+
+--
+## Hope so!
+
+<!-- No trailing spaces! after dash-dash-->
+
+
+---
+
+
+
+.pull-right[# Hello!]
+
+---
+
+```{r example-plot}
+ggplot(starwars) +
+  aes(x = height) +
+  geom_histogram(    #<<
+    binwidth = 10,   #<<
+    color = "grey85" #<<
+  )                  #<<
+```
+
+
+
+---
+
+
+.left-code[
+```{r again}
+ggplot(starwars) +
+  aes(x = height) +
+  aes(y = mass) +
+  geom_point() +
+  scale_x_log10() + #<<
+  scale_y_log10()   #<<
+```
+]
+
+.right-plot[
+```{r plot-label-out, ref.label="plot-label", echo=FALSE}
+```
+]
+
+
+---
+class: inverse, center, middle
+background-image: url(https://images.unsplash.com/photo-1522210667936-c3402f6742c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1402&q=80)
+background-size: contain
+
+# {flipbookr}
+
+
+---
+
+`r chunk_reveal("explain_dist", chunk_options = "fig.height = 6")`
+
+```{r explain_dist, include=F}
+cars %>% 
+  ggplot() +
+  aes(y = dist) +
+  geom_rug() +
+  aes(x = speed) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              se = F)
+```
+
+
+
+
+---
+class: inverse, middle, right
+background-image: url(https://images.unsplash.com/photo-1520999166456-6c498658829d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)
+background-size: cover
+
+# {flair}
+
+---
+
+```{r hey, echo = F}
+library(flair)
+```
+
+```{r how_to_pipe, include = FALSE}
+iris %>%
+  group_by(Species) %>%
+  summarize(mean(Sepal.Length))
+```
+
+```{r ho, echo = FALSE}
+decorate("how_to_pipe") %>% 
+  flair("%>%")
+```
+
+---
+
+```{r plot, include=F}
+ggplot(cars) +
+  aes(x = speed) +
+  aes(y = dist) +
+  geom_point() +
+  aes(size = speed) +
+  aes(color = dist) +
+  scale_color_viridis_c()
+```
+
+```{r hum, fig.height=3, echo = F}
+decorate("plot") %>% 
+  flair_funs()
+```
+
+---
+
+
+```{r hee, include=F}
+decorate("plot") %>% 
+  flair_args(color = "steelblue")
+```
+
+---
+
+# `aes()` is "asking for representation"
+
+
+
+```{r ha, echo = F}
+decorate("plot") %>% 
+  flair_args(pattern = "aes")
+```
+
+
+---
+class: inverse, center, middle
+background-image: url(https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1576&q=80)
+background-size: contain
+
+# {xaringanExtra}
+
+---
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+```
+
+## .can-edit[You can edit this slide title]
+
+### A few of my favorite things
+
+.can-edit.key-likes[
+- thing one
+- thing two
+]
+
+
+---
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[
+Tachyons provides small, single-purpose CSS classes that are easily composed to achieve larger functionality and styles. In the remarkjs content classes syntax, you can compose classes by chaining them together. For example, the following markdown produces a box with a washed green background (.bg-washed-green) and a dark green border (.b--dark-green) on all sides (.ba) with line width 2 (.bw2) and border radius (.br3). The box has a shadow (.shadow-5) and medium-large horizontal padding (.ph4) with a large top margin (.mt5).
+.tr[
+— Garrick Aden-Buie
+]]
+
+---
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panel[.panel-name[This is a Panel Set]
+Some things that hang together
+]
+
+.panelset[
+.panel[.panel-name[R Code]
+
+```{r panel-chunk, fig.show='hide'}
+plot(pressure)
+```
+]
+
+.panel[.panel-name[Plot]
+
+```{r panel-chunk2, echo = F}
+plot(pressure)
+```
+]
+]
+
+---
+
+
+# Animation
+
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+# xaringanExtra::use_animate_all("slide_left")
+```
+
+---
+class: animated slideInLeft fadeOutRight
+
+## This slide...
+
+- slides in from the left 
+- and fades out to the right on exit
+
+
+
+---
+class: animated fadeInLeft rollOutRight inverse
+background-image: url(https://images.unsplash.com/photo-1467546706352-fa0391181b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
+background-size: cover
+
+# Now watch this
+
+- slides in from the left 
+- and rolls out to the left on the Right
+
+
+---
+
+# The end

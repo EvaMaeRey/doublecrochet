@@ -130,8 +130,12 @@
     <p>Title crochet</p>
     </div>
 
-    <pre class="usage"><span class='fu'>crochet</span>(<span class='no'>input</span>, <span class='kw'>output</span> <span class='kw'>=</span> <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace</a></span>(<span class='no'>input</span>, <span class='st'>"\\.rmd|\\.Rmd"</span>,
-  <span class='st'>"_double_crochet.Rmd"</span>))</pre>
+    <pre class="usage"><span class='fu'>crochet</span>(
+  <span class='no'>input</span>,
+  <span class='kw'>dcrocheted_rmd</span> <span class='kw'>=</span> <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace</a></span>(<span class='no'>input</span>, <span class='st'>"\\.rmd|\\.Rmd"</span>,
+    <span class='st'>"_double_crochet.Rmd"</span>),
+  <span class='kw'>render</span> <span class='kw'>=</span> <span class='no'>T</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

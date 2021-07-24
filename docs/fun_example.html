@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducing Double Crochet</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Featuring a few of my favorite things" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x877c5d75a954c11976e7511e943c623","expires":1}</script>
+    <script src="libs/himalaya-1.1.0/himalaya.js"></script>
+    <script src="libs/js-cookie-3.0.0/js.cookie.js"></script>
+    <link href="libs/editable-0.2.6/editable.css" rel="stylesheet" />
+    <script src="libs/editable-0.2.6/editable.js"></script>
+    <link href="libs/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <link href="libs/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introducing Double Crochet
+### Featuring a few of my favorite things
+
+---
+
+
+
+
+
+# Hi!
+
+&lt;style type="text/css"&gt;
+.remark-code{line-height: 1.5; font-size: 120%}
+&lt;/style&gt;
+
+&lt;style type="text/css"&gt;
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+&lt;/style&gt;
+
+
+
+
+
+
+---
+
+# Hello. 
+--
+How are you? 
+--
+Good?
+
+--
+## Hope so!
+
+&lt;!-- No trailing spaces! after dash-dash--&gt;
+
+
+---
+
+
+
+.pull-right[# Hello!]
+
+---
+
+
+```r
+ggplot(starwars) +
+  aes(x = height) +
+* geom_histogram(
+*   binwidth = 10,
+*   color = "grey85"
+* )
+```
+
+![](fun_example_files/figure-html/example-plot-1.png)&lt;!-- --&gt;
+
+
+
+---
+
+
+.left-code[
+
+```r
+ggplot(starwars) +
+  aes(x = height) +
+  aes(y = mass) +
+  geom_point() +
+* scale_x_log10() +
+* scale_y_log10()
+```
+
+![](fun_example_files/figure-html/again-1.png)&lt;!-- --&gt;
+]
+
+.right-plot[
+
+]
+
+
+---
+class: inverse, center, middle
+background-image: url(https://images.unsplash.com/photo-1522210667936-c3402f6742c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1402&amp;q=80)
+background-size: contain
+
+# {flipbookr}
+
+
+---
+
+count: false
+ 
+
+.panel1-explain_dist-auto[
+
+```r
+*cars
+```
+]
+ 
+.panel2-explain_dist-auto[
+
+]
+
+---
+count: false
+ 
+
+.panel1-explain_dist-auto[
+
+```r
+cars %&gt;%
+* ggplot()
+```
+]
+ 
+.panel2-explain_dist-auto[
+![](fun_example_files/figure-html/explain_dist_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-explain_dist-auto[
+
+```r
+cars %&gt;%
+  ggplot() +
+* aes(y = dist)
+```
+]
+ 
+.panel2-explain_dist-auto[
+![](fun_example_files/figure-html/explain_dist_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-explain_dist-auto[
+
+```r
+cars %&gt;%
+  ggplot() +
+  aes(y = dist) +
+* geom_rug()
+```
+]
+ 
+.panel2-explain_dist-auto[
+![](fun_example_files/figure-html/explain_dist_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-explain_dist-auto[
+
+```r
+cars %&gt;%
+  ggplot() +
+  aes(y = dist) +
+  geom_rug() +
+* aes(x = speed)
+```
+]
+ 
+.panel2-explain_dist-auto[
+![](fun_example_files/figure-html/explain_dist_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-explain_dist-auto[
+
+```r
+cars %&gt;%
+  ggplot() +
+  aes(y = dist) +
+  geom_rug() +
+  aes(x = speed) +
+* geom_point()
+```
+]
+ 
+.panel2-explain_dist-auto[
+![](fun_example_files/figure-html/explain_dist_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-explain_dist-auto[
+
+```r
+cars %&gt;%
+  ggplot() +
+  aes(y = dist) +
+  geom_rug() +
+  aes(x = speed) +
+  geom_point() +
+* geom_smooth(method = "lm",
+*             se = F)
+```
+]
+ 
+.panel2-explain_dist-auto[
+![](fun_example_files/figure-html/explain_dist_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-explain_dist-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-explain_dist-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-explain_dist-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+
+---
+class: inverse, middle, right
+background-image: url(https://images.unsplash.com/photo-1520999166456-6c498658829d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80)
+background-size: cover
+
+# {flair}
+
+---
+
+
+
+
+
+
+&lt;code class ='r hljs remark-code'&gt;iris &lt;span style='background-color:#ffff7f'&gt;%&gt;%&lt;/span&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;group_by(Species) &lt;span style='background-color:#ffff7f'&gt;%&gt;%&lt;/span&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(mean(Sepal.Length))&lt;/code&gt;
+
+---
+
+
+
+
+&lt;code class ='r hljs remark-code'&gt;&lt;span style='background-color:#ffff7f'&gt;ggplot&lt;/span&gt;(cars) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(x = speed) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(y = dist) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;geom_point&lt;/span&gt;() +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(size = speed) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(color = dist) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;scale_color_viridis_c&lt;/span&gt;()&lt;/code&gt;
+
+
+![](fun_example_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+---
+
+
+
+
+---
+
+# `aes()` is "asking for representation"
+
+
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(cars) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(x = speed) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(y = dist) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point() +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(size = speed) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;aes&lt;/span&gt;(color = dist) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_color_viridis_c()&lt;/code&gt;
+
+
+![](fun_example_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+
+---
+class: inverse, center, middle
+background-image: url(https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1576&amp;q=80)
+background-size: contain
+
+# {xaringanExtra}
+
+---
+
+
+
+## .can-edit[You can edit this slide title]
+
+### A few of my favorite things
+
+.can-edit.key-likes[
+- thing one
+- thing two
+]
+
+
+---
+
+
+
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[
+Tachyons provides small, single-purpose CSS classes that are easily composed to achieve larger functionality and styles. In the remarkjs content classes syntax, you can compose classes by chaining them together. For example, the following markdown produces a box with a washed green background (.bg-washed-green) and a dark green border (.b--dark-green) on all sides (.ba) with line width 2 (.bw2) and border radius (.br3). The box has a shadow (.shadow-5) and medium-large horizontal padding (.ph4) with a large top margin (.mt5).
+.tr[
+— Garrick Aden-Buie
+]]
+
+---
+
+
+
+.panel[.panel-name[This is a Panel Set]
+Some things that hang together
+]
+
+.panelset[
+.panel[.panel-name[R Code]
+
+
+```r
+plot(pressure)
+```
+]
+
+.panel[.panel-name[Plot]
+
+![](fun_example_files/figure-html/panel-chunk2-1.png)&lt;!-- --&gt;
+]
+]
+
+---
+
+
+# Animation
+
+
+
+---
+class: animated slideInLeft fadeOutRight
+
+## This slide...
+
+- slides in from the left 
+- and fades out to the right on exit
+
+
+
+---
+class: animated fadeInLeft rollOutRight inverse
+background-image: url(https://images.unsplash.com/photo-1467546706352-fa0391181b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80)
+background-size: cover
+
+# Now watch this
+
+- slides in from the left 
+- and rolls out to the left on the Right
+
+
+---
+
+# The end
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

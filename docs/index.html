@@ -82,20 +82,19 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="doublecrochet" class="section level1">
+<div id="introducing-doublecrochet" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#doublecrochet" class="anchor"></a>doublecrochet</h1></div>
-<p><img src="https://images.unsplash.com/photo-1577635515158-dcce4789c8fb?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=751&amp;q=80"></p>
+<a href="#introducing-doublecrochet" class="anchor"></a>Introducing <em>{doublecrochet}</em>
+</h1></div>
+<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
 <!-- badges: start -->
 
-<p>Rmarkdown files are cool. They allow you to co-mingle prose, code, and code output in a single output file. Having code and code output together in a rendered document is helpful at interpreting intent of the code. And getting up and running with .Rmds is pretty easy — learn bit about code chunks, a bit of markdown and you are good to go.</p>
-<p>But there is a lot that you can do in .Rmds beyond the basics. May feel .Rmd admiration and <em>wonder</em> when seeing the products of more advanced users. How did they to <em>that</em>?</p>
-<p>And as you become a more advanced user you might asked more and more: How did you produce those slides, poster, dashboard etc.? How can you easily deliver ‘the how-to goods’ in a detailed way when you get this question?</p>
-<p><strong>The goal of doublecrochet is to help you produce a second output from your .Rmd – one that has source snippets quoted proximate (usually prior) to the rendered output.</strong></p>
-<p>The package is experimental, and now focused a case where there are natural breakpoints – slideshows! Quoted source is presented on a slide, then the rendered content is shown. Yay!</p>
-<p>Inspiration for this project was creating <a href="https://evamaerey.github.io/flipbooks/flipbook_recipes#1">Easy Flipbooks Recipes</a> where I was quoting my source a bunch w/ copy paste and fancy fencing. But it was painstaking and error prone, and I only got through 4 recipes.</p>
-<p>But there are more ‘recipes’ that I’d like to share. One test/use case will be ‘Most Flipbookr Features’ template, a template that is part of the flipbookr package that demonstrates (and I use for testing) most flipbookr modes. Having ‘doublecrochet’ working should be nice for communicating about how to use flipbookr – and other cool xaringan-complementary packages.</p>
-<p>Check out doublecrochet’s package template which features some cool things you can do w/ Xaringan extension packages…</p>
+<p>Rmarkdown files are so cool. They let you to combine prose, code, and code output in a <em>single</em> output file. And getting up and running with .Rmds is pretty easy — learn bit about code chunks, a bit of markdown and you are good to go.</p>
+<p>But there is a lot that you can do in .Rmds beyond the basics. So you may feel .Rmd admiration and wonder at the products of more advanced users. How did they to <em>that</em>?</p>
+<p>Or maybe as an advanced user you might get asked: <em>How did you produce those slides, poster, dashboard etc.?</em> You can answer ‘xaringan’ or ‘knitr’, but can you deliver ‘the how-to goods’ in a detailed way when you get this question?</p>
+<p>The goal of doublecrochet is to help produce a complementary output from your .Rmd – one that has .Rmd source snippets quoted close to the rendered output.</p>
+<p>The package is experimental, and now focused a case where there are natural breakpoints – slideshows! Quoted source is presented on a slide, then the rendered content is shown.</p>
+<p>Check out doublecrochet’s in action below. The first set of slides is a slide show of ‘Cool Xaringan Stuff’, and the second is the Double Crochetted version that quotes the slide source.</p>
 <div id="compare-" class="section level2">
 <h2 class="hasAnchor">
 <a href="#compare-" class="anchor"></a><em>Compare</em> …</h2>
@@ -111,7 +110,8 @@
 </div>
 <div id="-with-the-double-crocheted-version" class="section level2">
 <h2 class="hasAnchor">
-<a href="#-with-the-double-crocheted-version" class="anchor"></a>… with the Double Crocheted version</h2>
+<a href="#-with-the-double-crocheted-version" class="anchor"></a><em>… with the Double Crocheted version</em>
+</h2>
 <div id="cool-xaringan-stuff-double-crocheted-view-in-new-tab" class="section level3">
 <h3 class="hasAnchor">
 <a href="#cool-xaringan-stuff-double-crocheted-view-in-new-tab" class="anchor"></a>Cool Xaringan Stuff <em>Double Crocheted</em> <a href="https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff_double_crochet.html" target="_blank">View in new tab</a>:</h3>
@@ -119,8 +119,13 @@
 <iframe src="https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff_double_crochet.html" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allowtransparency="true">
 </iframe>
 </div>
-<p>Meanwhile, we’ll think about how it can be used for other .Rmd products where we don’t have slide breaks as natural pause points.</p>
 </div>
+</div>
+<div id="motivation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#motivation" class="anchor"></a>Motivation</h2>
+<p>Inspiration for this project was creating <a href="https://evamaerey.github.io/flipbooks/flipbook_recipes#1">Easy Flipbooks Recipes</a> where I was quoting my source a bunch w/ copy paste and fancy fencing. I only got through 4 ‘recipes’. But there were more ‘recipes’ that I’d like to share.</p>
+<p>Having ‘doublecrochet’ working should be nice for communicating about how to use flipbookr – and other cool xaringan-complementary packages.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -139,25 +144,39 @@
 <p>For now doublecrochet::crochet() is intended for use with xaringan .Rmd slide show files:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doublecrochet)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd"</span>, <span class="st">"xaringan_skeleton.Rmd"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">## a text .rmd file stored on github</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd"</span>, </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">"doublecrochet_example.Rmd"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## a text .rmd file stored on github</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://raw.githubusercontent.com/EvaMaeRey/doublecrochet/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd"</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">"docs/fun_example.Rmd"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># regular render of xaringan .Rmd </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="at">input =</span> <span class="st">"docs/fun_example.Rmd"</span>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">crochet</span>(<span class="st">"doublecrochet_example.Rmd"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">"doublecrochet_skeleton_double_crochet.Rmd"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">crochet</span>(<span class="st">"xaringan_skeleton.Rmd"</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># fails!  you've got to go into the .Rmd and fix up backslashes</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># in fact for the math type the conversion is not working, you have to go back in and escape</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")</span></span></code></pre></div>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># double crochet render</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>doublecrochet<span class="sc">::</span><span class="fu">crochet</span>(<span class="st">"docs/doublecrochet_example.Rmd"</span>, <span class="at">render =</span> T)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                      </span></code></pre></div>
 <p>Once you have the ‘doublecrochet’ version of your .Rmd, you can try to compile and render this and you’ll have html output. Source will be quoted throughout.</p>
+</div>
+<div id="bugs" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bugs" class="anchor"></a>Bugs</h2>
+<p>Backslashing is still being worked out. Especially sad is that math mode doesn’t work well because of this. :-( I see this “–from markdown+autolink_bare_uris+tex_math_single_backslash” in pandoc conversion upon render. Maybe the answer is in there…</p>
+<p>We see this with the xaringan template below.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doublecrochet)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd"</span>, <span class="st">"xaringan_skeleton.Rmd"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">crochet</span>(<span class="st">"xaringan_skeleton.Rmd"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># fails!  you've got to go into the .Rmd and fix up backslashes</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># in fact for the math type the conversion is not working, you have to go back in and escape</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")</span></span></code></pre></div>
+</div>
+<div id="scope" class="section level2">
+<h2 class="hasAnchor">
+<a href="#scope" class="anchor"></a>Scope</h2>
+<p>Doublecrochet doesn’t do a good job of showing bigger picture and global style changes in a file.</p>
 </div>
 </div>
   </div>
