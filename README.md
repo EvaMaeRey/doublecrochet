@@ -23,7 +23,8 @@ users. How did they to *that*?
 Or maybe as an advanced user you might get asked: *How did you produce
 those slides, poster, dashboard etc.?* You can answer ‘xaringan’ or
 ‘knitr’, but can you deliver ‘the how-to goods’ in a detailed way when
-you get this question?
+you get this question? (Another common sensation, looking back at your
+own work, may be ‘how did I get that done?’)
 
 The goal of doublecrochet is to help produce a complementary output from
 your .Rmd – one that has .Rmd source snippets quoted close to the
@@ -95,13 +96,13 @@ library(doublecrochet)
 ## a text .rmd file stored on github
 download.file(
   url = "https://raw.githubusercontent.com/EvaMaeRey/doublecrochet/master/inst/rmarkdown/templates/double-crochet/skeleton/skeleton.Rmd", 
-  destfile = "docs/fun_example.Rmd")
+  destfile = "docs/cool_xaringan_stuff.Rmd")
 
 # regular render of xaringan .Rmd 
-rmarkdown::render(input = "docs/fun_example.Rmd")
+rmarkdown::render(input = "docs/cool_xaringan_stuff.Rmd")
 
 # double crochet render
-doublecrochet::crochet("docs/doublecrochet_example.Rmd", render = T)
+doublecrochet::crochet(input = "docs/cool_xaringan_stuff.Rmd", render = T)
                       
 ```
 

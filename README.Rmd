@@ -32,16 +32,21 @@ magick::image_read("https://images.unsplash.com/photo-1577635515158-dcce4789c8fb
   stamp_text(label = "{doublecrochet}",
                fontface = "bold",
                x = 82, y = 48,
-               size = 5, 
+               size = 6, 
                color = "oldlace") + 
   stamp_label(label = ".Rmd source",
               fill = "oldlace",
+              size = 7,
               x = 30, y = 30,
               color = "grey15") + 
   stamp_label(label = "output",
               fill = "oldlace",
               x = 60, y = 20,
               color = "grey15") + 
+  stamp_tile(height = 60, width = 93, 
+             x = 50, y = 33,
+             alpha = 0, size = 2, 
+             color = alpha("oldlace", .7)) +
   # stamp_text(label = ".Rmd ...", 
   #            size = 12, x = 18,
   #            y = 55, color = "oldlace",
@@ -65,7 +70,7 @@ Rmarkdown files are so cool.  They let you to combine prose, code, and code outp
 
 But there is a lot that you can do in .Rmds beyond the basics. So you may feel .Rmd admiration and wonder at the products of more advanced users.  How did they to *that*?
 
-Or maybe as an advanced user you might get asked:  *How did you produce those slides, poster, dashboard etc.?*  You can answer 'xaringan' or 'knitr', but can you deliver 'the how-to goods' in a detailed way when you get this question?
+Or maybe as an advanced user you might get asked:  *How did you produce those slides, poster, dashboard etc.?*  You can answer 'xaringan' or 'knitr', but can you deliver 'the how-to goods' in a detailed way when you get this question? (Another common sensation, looking back at your own work, may be 'how did I get that done?')
 
 The goal of doublecrochet is to help produce a complementary output from your .Rmd -- one that has .Rmd source snippets quoted close to the rendered output.
 
@@ -129,7 +134,7 @@ download.file(
 rmarkdown::render(input = "docs/cool_xaringan_stuff.Rmd")
 
 # double crochet render
-doublecrochet::crochet("docs/cool_xaringan_stuff.Rmd", render = T)
+doublecrochet::crochet(input = "docs/cool_xaringan_stuff.Rmd", render = T)
                       
 
 ```
