@@ -26,13 +26,13 @@ those slides, poster, dashboard etc.?* You can answer ‘xaringan’ or
 you get this question? (Another common sensation, looking back at your
 own work, may be ‘how did I get that done?’)
 
-The goal of doublecrochet is to help produce a complementary output from
+The goal of doublecrochet is to help produce a companion output from
 your .Rmd – one that has .Rmd source snippets quoted close to the
 rendered output.
 
-The package is experimental, and now focused a case where there are
-natural breakpoints – slideshows! Quoted source is presented on a slide,
-then the rendered content is shown.
+The package now focused a case where there are natural breakpoints –
+slideshows! Quoted source is presented on a slide, then the rendered
+content is shown.
 
 Check out doublecrochet’s in action below. The first set of slides is a
 slide show of ‘Cool Xaringan Stuff’, and the second is the Double
@@ -71,6 +71,9 @@ share.
 Having ‘doublecrochet’ working should be nice for communicating about
 how to use flipbookr – and other cool xaringan-complementary packages.
 
+2022 update: Now quoting the .Rmd verbatim is done using the new
+[verbatim engine](https://yihui.org/en/2022/01/knitr-news/) from knitr!
+
 ## Installation
 
 <!-- You can install the released version of doublecrochet from [CRAN](https://CRAN.R-project.org) with: -->
@@ -78,7 +81,7 @@ how to use flipbookr – and other cool xaringan-complementary packages.
 <!-- install.packages("doublecrochet") -->
 <!-- ``` -->
 
-And the development version from [GitHub](https://github.com/) with:
+The development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
@@ -109,28 +112,6 @@ doublecrochet::crochet(input = "docs/cool_xaringan_stuff.Rmd", render = T)
 Once you have the ‘doublecrochet’ version of your .Rmd, you can try to
 compile and render this and you’ll have html output. Source will be
 quoted throughout.
-
-## Bugs
-
-Backslashing is still being worked out. Especially sad is that math mode
-doesn’t work well because of this. :-( I see this “–from
-markdown+autolink\_bare\_uris+tex\_math\_single\_backslash” in pandoc
-conversion upon render. Maybe the answer is in there…
-
-We see this with the xaringan template below.
-
-``` r
-library(doublecrochet)
-
-download.file("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", "xaringan_skeleton.Rmd")
-
-crochet("xaringan_skeleton.Rmd")
-
-# fails!  you've got to go into the .Rmd and fix up backslashes
-
-# in fact for the math type the conversion is not working, you have to go back in and escape
-# rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")
-```
 
 ## Scope
 

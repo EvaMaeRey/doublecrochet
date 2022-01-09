@@ -81,6 +81,9 @@ portion_list_quote <- function(portion_list){
          .,
          "')\n```")
 
+  portion_list %>%
+    paste0("---\n````{verbatim}\n", ., "\n````")
+
 }
 
 
@@ -151,7 +154,7 @@ combined %>%
 #' @export
 #'
 #' @examples
-crochet <- function(input,
+doublecrochet <- function(input,
                     dcrocheted_rmd = stringr::str_replace(input,
                                                   "\\.rmd|\\.Rmd",
                                                   "_double_crochet.Rmd"),

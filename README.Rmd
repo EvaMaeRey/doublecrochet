@@ -72,9 +72,9 @@ But there is a lot that you can do in .Rmds beyond the basics. So you may feel .
 
 Or maybe as an advanced user you might get asked:  *How did you produce those slides, poster, dashboard etc.?*  You can answer 'xaringan' or 'knitr', but can you deliver 'the how-to goods' in a detailed way when you get this question? (Another common sensation, looking back at your own work, may be 'how did I get that done?')
 
-The goal of doublecrochet is to help produce a complementary output from your .Rmd -- one that has .Rmd source snippets quoted close to the rendered output.
+The goal of doublecrochet is to help produce a companion output from your .Rmd -- one that has .Rmd source snippets quoted close to the rendered output.
 
-The package is experimental, and now focused a case where there are natural breakpoints -- slideshows!  Quoted source is presented on a slide, then the rendered content is shown. 
+The package now focused a case where there are natural breakpoints -- slideshows!  Quoted source is presented on a slide, then the rendered content is shown. 
 
 Check out doublecrochet's in action below. The first set of slides is a slide show of 'Cool Xaringan Stuff', and the second is the Double Crochetted version that quotes the slide source.
 
@@ -102,6 +102,8 @@ Inspiration for this project was creating [Easy Flipbooks Recipes](https://evama
 
 Having 'doublecrochet' working should be nice for communicating about how to use flipbookr -- and other cool xaringan-complementary packages. 
 
+2022 update: Now quoting the .Rmd verbatim is done using the new [verbatim engine](https://yihui.org/en/2022/01/knitr-news/) from knitr! 
+
 
 
 ## Installation
@@ -112,7 +114,7 @@ Having 'doublecrochet' working should be nice for communicating about how to use
 <!-- install.packages("doublecrochet") -->
 <!-- ``` -->
 
-And the development version from [GitHub](https://github.com/) with:
+The development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
@@ -141,6 +143,7 @@ doublecrochet::crochet(input = "docs/cool_xaringan_stuff.Rmd", render = T)
 
 Once you have the 'doublecrochet' version of your .Rmd, you can try to compile and render this and you'll have html output.  Source will be quoted throughout. 
 
+````{comment}
 ## Bugs
 
 Backslashing is still being worked out.  Especially sad is that math mode doesn't work well because of this.  :-(  I see this "--from markdown+autolink_bare_uris+tex_math_single_backslash" in pandoc conversion upon render.  Maybe the answer is in there...
@@ -152,7 +155,7 @@ library(doublecrochet)
 
 download.file("https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd", "xaringan_skeleton.Rmd")
 
-crochet("xaringan_skeleton.Rmd")
+doublecrochet::doublecrochet("xaringan_skeleton.Rmd")
 
 # fails!  you've got to go into the .Rmd and fix up backslashes
 
@@ -160,7 +163,10 @@ crochet("xaringan_skeleton.Rmd")
 # rmarkdown::render("xaringan_skeleton_double_crochet.Rmd")
 ```
 
+````
+
 ## Scope
 
 Doublecrochet doesn't do a good job of showing bigger picture and global style changes in a file.  
+
 

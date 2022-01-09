@@ -1,10 +1,10 @@
 ---
-title: "Introducing Double Crochet"
-author: "Featuring a few of my favorite things"
+title: "cool {xaringan} stuff"
+author: "for introducing {doublecrochet}"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: [default, "custom.css"]
+    css:  [default, hygge, ninjutsu]
     nature:
       ratio: 16:9
       highlightStyle: github
@@ -23,7 +23,23 @@ options(knitr.duplicate.label = "allow")
 xaringanExtra::use_share_again()
 ```
 
-# Hi!
+
+## If you make an amazing presentation with {xaringan}, people may ask:
+
+--
+
+.pull-left[#*How did you make those neat slides*?]
+
+--
+
+## with {doublecrochet} you can render a second 'how-to-xaringan' presentation -- with little extra work for you!
+--
+
+
+---
+
+# But first let's look at some of the amazing things you can do in {xaringan}!
+
 
 ```{css style, eval = TRUE, echo = FALSE}
 .remark-code{line-height: 1.5; font-size: 120%}
@@ -50,25 +66,11 @@ xaringanExtra::use_share_again()
 
 ---
 
-# Hello. 
---
-How are you? 
---
-Good?
+
+
+.pull-right[# We do some code highlighting!]
 
 --
-## Hope so!
-
-<!-- No trailing spaces! after dash-dash-->
-
-
----
-
-
-
-.pull-right[# Hello!]
-
----
 
 ```{r example-plot}
 ggplot(starwars) +
@@ -84,8 +86,10 @@ ggplot(starwars) +
 ---
 
 
-.left-code[
-```{r again}
+# We can do side-by-side code and plots!
+
+.pull-left[
+```{r sidebyside, eval = FALSE}
 ggplot(starwars) +
   aes(x = height) +
   aes(y = mass) +
@@ -95,10 +99,41 @@ ggplot(starwars) +
 ```
 ]
 
-.right-plot[
-```{r plot-label-out, ref.label="plot-label", echo=FALSE}
+.pull-right[
+```{r sidebyside-out, ref.label="sidebyside", echo=FALSE}
 ```
 ]
+
+---
+
+# look at this `mtcars` table!
+
+
+```{r, echo = F}
+# use 'html' format for tables
+knitr::kable(head(mtcars), format = 'html') 
+```
+
+
+
+---
+
+# An equation
+
+$$cov(x,y) = \frac{\sum_{i=1}^n (x_i-\mu_x)(y_i-\mu_y)}{n}$$
+
+
+---
+# What about packages that complement {xaringan}?
+
+--
+
+## Let's look at 
+
+- ##{flipbookr}
+- ##{flair}
+- ##{xaringanExtra}.
+
 
 
 ---
@@ -124,6 +159,32 @@ cars %>%
               se = F)
 ```
 
+
+---
+
+`r chunk_reveal("dc_advert", widths = c(1.3, 1))`
+
+```{r dc_advert, include=F}
+magick::image_read("https://images.unsplash.com/photo-1577635515158-dcce4789c8fb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80") %>% 
+  magick::image_write(format = "png") %>% 
+  ggbackdrop(png = .) +
+  stamp_polygon(x0 = 82, y0 = 46, radius = 15,
+                fill = "brown", alpha = .2,
+                size = 1.5, color = "oldlace",
+                linetype = "dotted") + 
+  stamp_text(label = "{doublecrochet}",
+             fontface = "bold", x = 82, y = 46,
+              size = 6, color = "oldlace") + 
+  stamp_label(label = ".Rmd source",
+              fill = "oldlace", size = 7,
+              x = 30, y = 30, color = "grey15") + 
+  stamp_label(label = "output", fill = "oldlace",
+              x = 60, y = 20, color = "grey15") + 
+  stamp_tile(height = 60, width = 93, 
+             x = 50, y = 33, alpha = 0, size = 2, 
+             color = alpha("oldlace", .7)) + 
+  theme_void()
+```
 
 
 
@@ -153,7 +214,7 @@ decorate("how_to_pipe") %>%
 
 ---
 
-```{r plot, include=F}
+```{r chunk_to_flair, include=F}
 ggplot(cars) +
   aes(x = speed) +
   aes(y = dist) +
@@ -164,7 +225,7 @@ ggplot(cars) +
 ```
 
 ```{r hum, fig.height=3, echo = F}
-decorate("plot") %>% 
+decorate("chunk_to_flair") %>% 
   flair_funs()
 ```
 
@@ -172,20 +233,10 @@ decorate("plot") %>%
 
 
 ```{r hee, include=F}
-decorate("plot") %>% 
+decorate("chunk_to_flair") %>% 
   flair_args(color = "steelblue")
 ```
 
----
-
-# `aes()` is "asking for representation"
-
-
-
-```{r ha, echo = F}
-decorate("plot") %>% 
-  flair_args(pattern = "aes")
-```
 
 
 ---
@@ -201,9 +252,9 @@ background-size: contain
 xaringanExtra::use_editable(expires = 1)
 ```
 
-## .can-edit[You can edit this slide title]
+## .can-edit[You can edit this title.  Put your cursor here and get typing]
 
-### A few of my favorite things
+### Or edit this list!
 
 .can-edit.key-likes[
 - thing one
@@ -216,6 +267,8 @@ xaringanExtra::use_editable(expires = 1)
 ```{r xaringan-tachyons, echo=FALSE}
 xaringanExtra::use_tachyons()
 ```
+
+# You can write Tachyons:
 
 .bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[
 Tachyons provides small, single-purpose CSS classes that are easily composed to achieve larger functionality and styles. In the remarkjs content classes syntax, you can compose classes by chaining them together. For example, the following markdown produces a box with a washed green background (.bg-washed-green) and a dark green border (.b--dark-green) on all sides (.ba) with line width 2 (.bw2) and border radius (.br3). The box has a shadow (.shadow-5) and medium-large horizontal padding (.ph4) with a large top margin (.mt5).
@@ -247,39 +300,21 @@ plot(pressure)
 plot(pressure)
 ```
 ]
+
 ]
 
+
+
 ---
 
+## And doublecrochetting this presentation is easy...
 
-# Animation
+### You'd use code like this:
 
-```{r xaringan-animate-css, echo=FALSE}
-xaringanExtra::use_animate_css()
-# xaringanExtra::use_animate_all("slide_left")
+```r
+doublecrochet::doublecrochet("my_presentation.Rmd")
 ```
 
----
-class: animated slideInLeft fadeOutRight
-
-## This slide...
-
-- slides in from the left 
-- and fades out to the right on exit
+### And get html output that can be viewed [here](https://evamaerey.github.io/doublecrochet/cool_xaringan_stuff_double_crochet.html){target="_blank"}.
 
 
-
----
-class: animated fadeInLeft rollOutRight inverse
-background-image: url(https://images.unsplash.com/photo-1467546706352-fa0391181b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
-background-size: cover
-
-# Now watch this
-
-- slides in from the left 
-- and rolls out to the left on the Right
-
-
----
-
-# The end

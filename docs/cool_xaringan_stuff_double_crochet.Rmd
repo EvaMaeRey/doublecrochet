@@ -17,10 +17,20 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-title: "Introducing Double Crochet"\nauthor: "Featuring a few of my favorite things"\noutput:\n  xaringan::moon_reader:\n    lib_dir: libs\n    css: [default, "custom.css"]\n    nature:\n      ratio: 16:9\n      highlightStyle: github\n      highlightLines: true\n      countIncrementalSlides: false')
-```
+ ---
+````{verbatim}
+title: "Introducing Double Crochet"
+author: "Featuring a few of my favorite things"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, "custom.css"]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+````
 
 
 ---
@@ -28,10 +38,46 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE, message = F, \n                      warning = F, comment = "",\n                      fig.height = 4, cache = T)\nlibrary(tidyverse)\nlibrary(flipbookr)\noptions(knitr.duplicate.label = "allow")\nxaringanExtra::use_share_again()\n```\n\n# Hi!\n\n```{css style, eval = TRUE, echo = FALSE}\n.remark-code{line-height: 1.5; font-size: 120%}\n```\n\n```{css style2, eval = TRUE, echo = FALSE}\n.left-code {\n  color: #777;\n  width: 38%;\n  height: 92%;\n  float: left;\n}\n.right-plot {\n  width: 60%;\n  float: right;\n  padding-left: 1%;\n}\n```\n\n\n\n\n\n')
+ ---
+````{verbatim}
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F, 
+                      warning = F, comment = "",
+                      fig.height = 4, cache = T)
+library(tidyverse)
+library(flipbookr)
+options(knitr.duplicate.label = "allow")
+xaringanExtra::use_share_again()
 ```
+
+# Hi!
+
+```{css style, eval = TRUE, echo = FALSE}
+.remark-code{line-height: 1.5; font-size: 120%}
+```
+
+```{css style2, eval = TRUE, echo = FALSE}
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+```
+
+
+
+
+
+
+````
 ---
 
 
@@ -77,10 +123,22 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n# Hello. \n--\nHow are you? \n--\nGood?\n\n--\n## Hope so!\n\n<!-- No trailing spaces! after dash-dash-->\n\n')
-```
+ ---
+````{verbatim}
+
+# Hello. 
+--
+How are you? 
+--
+Good?
+
+--
+## Hope so!
+
+<!-- No trailing spaces! after dash-dash-->
+
+
+````
 ---
 
 # Hello. 
@@ -102,10 +160,14 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n\n\n.pull-right[# Hello!]\n')
-```
+ ---
+````{verbatim}
+
+
+
+.pull-right[# Hello!]
+
+````
 ---
 
 
@@ -119,10 +181,21 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n```{r example-plot}\nggplot(starwars) +\n  aes(x = height) +\n  geom_histogram(    #<<\n    binwidth = 10,   #<<\n    color = "grey85" #<<\n  )                  #<<\n```\n\n\n')
+ ---
+````{verbatim}
+
+```{r example-plot}
+ggplot(starwars) +
+  aes(x = height) +
+  geom_histogram(    #<<
+    binwidth = 10,   #<<
+    color = "grey85" #<<
+  )                  #<<
 ```
+
+
+
+````
 ---
 
 ```{r example-plot}
@@ -143,10 +216,28 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n\n.left-code[\n```{r again}\nggplot(starwars) +\n  aes(x = height) +\n  aes(y = mass) +\n  geom_point() +\n  scale_x_log10() + #<<\n  scale_y_log10()   #<<\n```\n]\n\n.right-plot[\n```{r plot-label-out, ref.label="plot-label", echo=FALSE}\n```\n]\n\n')
+ ---
+````{verbatim}
+
+
+.left-code[
+```{r again}
+ggplot(starwars) +
+  aes(x = height) +
+  aes(y = mass) +
+  geom_point() +
+  scale_x_log10() + #<<
+  scale_y_log10()   #<<
 ```
+]
+
+.right-plot[
+```{r plot-label-out, ref.label="plot-label", echo=FALSE}
+```
+]
+
+
+````
 ---
 
 
@@ -174,10 +265,16 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-class: inverse, center, middle\nbackground-image: url(https://images.unsplash.com/photo-1522210667936-c3402f6742c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1402&q=80)\nbackground-size: contain\n\n# {flipbookr}\n\n')
-```
+ ---
+````{verbatim}
+class: inverse, center, middle
+background-image: url(https://images.unsplash.com/photo-1522210667936-c3402f6742c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1402&q=80)
+background-size: contain
+
+# {flipbookr}
+
+
+````
 ---
 class: inverse, center, middle
 background-image: url(https://images.unsplash.com/photo-1522210667936-c3402f6742c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1402&q=80)
@@ -193,10 +290,26 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n`r chunk_reveal("explain_dist", chunk_options = "fig.height = 6")`\n\n```{r explain_dist, include=F}\ncars %>% \n  ggplot() +\n  aes(y = dist) +\n  geom_rug() +\n  aes(x = speed) +\n  geom_point() +\n  geom_smooth(method = "lm",\n              se = F)\n```\n\n\n\n')
+ ---
+````{verbatim}
+
+`r chunk_reveal("explain_dist", chunk_options = "fig.height = 6")`
+
+```{r explain_dist, include=F}
+cars %>% 
+  ggplot() +
+  aes(y = dist) +
+  geom_rug() +
+  aes(x = speed) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              se = F)
 ```
+
+
+
+
+````
 ---
 
 `r chunk_reveal("explain_dist", chunk_options = "fig.height = 6")`
@@ -222,10 +335,15 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-class: inverse, middle, right\nbackground-image: url(https://images.unsplash.com/photo-1520999166456-6c498658829d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)\nbackground-size: cover\n\n# {flair}\n')
-```
+ ---
+````{verbatim}
+class: inverse, middle, right
+background-image: url(https://images.unsplash.com/photo-1520999166456-6c498658829d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)
+background-size: cover
+
+# {flair}
+
+````
 ---
 class: inverse, middle, right
 background-image: url(https://images.unsplash.com/photo-1520999166456-6c498658829d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)
@@ -240,10 +358,25 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n```{r hey, echo = F}\nlibrary(flair)\n```\n\n```{r how_to_pipe, include = FALSE}\niris %>%\n  group_by(Species) %>%\n  summarize(mean(Sepal.Length))\n```\n\n```{r ho, echo = FALSE}\ndecorate("how_to_pipe") %>% \n  flair("%>%")\n```\n')
+ ---
+````{verbatim}
+
+```{r hey, echo = F}
+library(flair)
 ```
+
+```{r how_to_pipe, include = FALSE}
+iris %>%
+  group_by(Species) %>%
+  summarize(mean(Sepal.Length))
+```
+
+```{r ho, echo = FALSE}
+decorate("how_to_pipe") %>% 
+  flair("%>%")
+```
+
+````
 ---
 
 ```{r hey, echo = F}
@@ -268,10 +401,25 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n```{r plot, include=F}\nggplot(cars) +\n  aes(x = speed) +\n  aes(y = dist) +\n  geom_point() +\n  aes(size = speed) +\n  aes(color = dist) +\n  scale_color_viridis_c()\n```\n\n```{r hum, fig.height=3, echo = F}\ndecorate("plot") %>% \n  flair_funs()\n```\n')
+ ---
+````{verbatim}
+
+```{r plot, include=F}
+ggplot(cars) +
+  aes(x = speed) +
+  aes(y = dist) +
+  geom_point() +
+  aes(size = speed) +
+  aes(color = dist) +
+  scale_color_viridis_c()
 ```
+
+```{r hum, fig.height=3, echo = F}
+decorate("plot") %>% 
+  flair_funs()
+```
+
+````
 ---
 
 ```{r plot, include=F}
@@ -296,10 +444,16 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n\n```{r hee, include=F}\ndecorate("plot") %>% \n  flair_args(color = "steelblue")\n```\n')
+ ---
+````{verbatim}
+
+
+```{r hee, include=F}
+decorate("plot") %>% 
+  flair_args(color = "steelblue")
 ```
+
+````
 ---
 
 
@@ -315,10 +469,20 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n# `aes()` is "asking for representation"\n\n\n\n```{r ha, echo = F}\ndecorate("plot") %>% \n  flair_args(pattern = "aes")\n```\n\n')
+ ---
+````{verbatim}
+
+# `aes()` is "asking for representation"
+
+
+
+```{r ha, echo = F}
+decorate("plot") %>% 
+  flair_args(pattern = "aes")
 ```
+
+
+````
 ---
 
 # `aes()` is "asking for representation"
@@ -338,10 +502,15 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-class: inverse, center, middle\nbackground-image: url(https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1576&q=80)\nbackground-size: contain\n\n# {xaringanExtra}\n')
-```
+ ---
+````{verbatim}
+class: inverse, center, middle
+background-image: url(https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1576&q=80)
+background-size: contain
+
+# {xaringanExtra}
+
+````
 ---
 class: inverse, center, middle
 background-image: url(https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1576&q=80)
@@ -356,10 +525,24 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n```{r xaringan-editable, echo=FALSE}\nxaringanExtra::use_editable(expires = 1)\n```\n\n## .can-edit[You can edit this slide title]\n\n### A few of my favorite things\n\n.can-edit.key-likes[\n- thing one\n- thing two\n]\n\n')
+ ---
+````{verbatim}
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
 ```
+
+## .can-edit[You can edit this slide title]
+
+### A few of my favorite things
+
+.can-edit.key-likes[
+- thing one
+- thing two
+]
+
+
+````
 ---
 
 ```{r xaringan-editable, echo=FALSE}
@@ -383,10 +566,20 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n```{r xaringan-tachyons, echo=FALSE}\nxaringanExtra::use_tachyons()\n```\n\n.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[\nTachyons provides small, single-purpose CSS classes that are easily composed to achieve larger functionality and styles. In the remarkjs content classes syntax, you can compose classes by chaining them together. For example, the following markdown produces a box with a washed green background (.bg-washed-green) and a dark green border (.b--dark-green) on all sides (.ba) with line width 2 (.bw2) and border radius (.br3). The box has a shadow (.shadow-5) and medium-large horizontal padding (.ph4) with a large top margin (.mt5).\n.tr[\n— Garrick Aden-Buie\n]]\n')
+ ---
+````{verbatim}
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
 ```
+
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[
+Tachyons provides small, single-purpose CSS classes that are easily composed to achieve larger functionality and styles. In the remarkjs content classes syntax, you can compose classes by chaining them together. For example, the following markdown produces a box with a washed green background (.bg-washed-green) and a dark green border (.b--dark-green) on all sides (.ba) with line width 2 (.bw2) and border radius (.br3). The box has a shadow (.shadow-5) and medium-large horizontal padding (.ph4) with a large top margin (.mt5).
+.tr[
+— Garrick Aden-Buie
+]]
+
+````
 ---
 
 ```{r xaringan-tachyons, echo=FALSE}
@@ -406,10 +599,34 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n```{r xaringan-panelset, echo=FALSE}\nxaringanExtra::use_panelset()\n```\n\n.panel[.panel-name[This is a Panel Set]\nSome things that hang together\n]\n\n.panelset[\n.panel[.panel-name[R Code]\n\n```{r panel-chunk, fig.show=\'hide\'}\nplot(pressure)\n```\n]\n\n.panel[.panel-name[Plot]\n\n```{r panel-chunk2, echo = F}\nplot(pressure)\n```\n]\n]\n')
+ ---
+````{verbatim}
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
 ```
+
+.panel[.panel-name[This is a Panel Set]
+Some things that hang together
+]
+
+.panelset[
+.panel[.panel-name[R Code]
+
+```{r panel-chunk, fig.show='hide'}
+plot(pressure)
+```
+]
+
+.panel[.panel-name[Plot]
+
+```{r panel-chunk2, echo = F}
+plot(pressure)
+```
+]
+]
+
+````
 ---
 
 ```{r xaringan-panelset, echo=FALSE}
@@ -443,10 +660,18 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n\n# Animation\n\n```{r xaringan-animate-css, echo=FALSE}\nxaringanExtra::use_animate_css()\n# xaringanExtra::use_animate_all("slide_left")\n```\n')
+ ---
+````{verbatim}
+
+
+# Animation
+
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+# xaringanExtra::use_animate_all("slide_left")
 ```
+
+````
 ---
 
 
@@ -464,10 +689,18 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-class: animated slideInLeft fadeOutRight\n\n## This slide...\n\n- slides in from the left \n- and fades out to the right on exit\n\n\n')
-```
+ ---
+````{verbatim}
+class: animated slideInLeft fadeOutRight
+
+## This slide...
+
+- slides in from the left 
+- and fades out to the right on exit
+
+
+
+````
 ---
 class: animated slideInLeft fadeOutRight
 
@@ -485,10 +718,19 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-class: animated fadeInLeft rollOutRight inverse\nbackground-image: url(https://images.unsplash.com/photo-1467546706352-fa0391181b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)\nbackground-size: cover\n\n# Now watch this\n\n- slides in from the left \n- and rolls out to the left on the Right\n\n')
-```
+ ---
+````{verbatim}
+class: animated fadeInLeft rollOutRight inverse
+background-image: url(https://images.unsplash.com/photo-1467546706352-fa0391181b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
+background-size: cover
+
+# Now watch this
+
+- slides in from the left 
+- and rolls out to the left on the Right
+
+
+````
 ---
 class: animated fadeInLeft rollOutRight inverse
 background-image: url(https://images.unsplash.com/photo-1467546706352-fa0391181b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
@@ -507,10 +749,11 @@ class: inverse
 
 ####From source .Rmd:
 
- ```{r, comment = '', echo = F, return = 'asis'}
-cat('---
-\n# The end')
-```
+ ---
+````{verbatim}
+
+# The end
+````
 ---
 
 # The end
